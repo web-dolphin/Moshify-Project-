@@ -627,3 +627,49 @@ In heading we have two things: 1. Is a heading(h2/h3) and 2. is an icon*/
   max-height: 100vh;
   opacity: 1;
 }
+
+/* Blocks */
+
+/* Sementically a block is represented by a section element */
+
+.block {
+  --padding-vertical: 6rem;
+  padding: var(--padding-vertical) 2rem;
+  /* If we declare a variable in a block it will be applied to it and all its childs */
+}
+
+.block__heading {
+  margin-top: 0;
+}
+
+.block__header {
+  text-align: center;
+}
+
+.block--dark {
+  background: #000;
+  color: #7b858b;
+}
+
+.block--dark .block__heading {
+  color: #fff;
+}
+
+/* We can use CSS clip-path for skey type of images */
+
+.block--skewed-right {
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 80%);
+  padding: calc(var(--padding-vertical) + 4rem);
+  /* calc() => To add an extra value to the existing one. */
+}
+.block--skewed-left {
+  padding: calc(var(--padding-vertical) + 4rem);
+  clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 0% 100%);
+}
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+/* Its a reusable container, can be used anywhere for setting width.*/
+/* Here in blocks, we cannot apply this on dark block! */
