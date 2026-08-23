@@ -165,7 +165,7 @@ a {
   }
 }
 
-/* Icons */
+/* collapsibles */
 
 .icon {
   width: 40px;
@@ -582,4 +582,48 @@ With this we end up with weird layout issues and sometimes trouble shooting issu
     justify-self: left;
     margin: 0 2rem;
   }
+}
+
+/* Collapsibles  */
+
+/*
+Every collapsible component should have to sections, 1. Header and 2. is body/content area. So when we click on
+on the header the body/content collapses.
+In heading we have two things: 1. Is a heading(h2/h3) and 2. is an icon*/
+
+.collapsible__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.collapsible__heading {
+  margin-top: 0;
+  font-size: 3rem;
+}
+
+.collapsible__chevron {
+  transform: rotate(-90deg);
+}
+
+.collapsible__chevron {
+  transition: transform 0.3s;
+}
+
+/* Collapsibles are in two states either collapse or expand. */
+
+.collapsible__content {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: all 0.3s;
+}
+
+.collapsible--expanded .collapsible__chevron {
+  transform: rotate(0);
+}
+
+.collapsible--expanded .collapsible__content {
+  max-height: 100vh;
+  opacity: 1;
 }
