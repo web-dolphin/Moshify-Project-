@@ -5,7 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Moshify</title>
     <link rel="stylesheet" href="styles.css" />
-    <!-- <link rel="stylesheet" href="css/normalize.css"> -->
+    <link rel="stylesheet" href="css/normalize.css" />
   </head>
-  <body></body>
+  <body>
+    <nav class="nav collapsible collapsible--expanded">
+      <a href="/"><img src="images/logo.svg" alt="" /></a>
+      <svg class="icon icon--white nav__toggler">
+        <use xlink:href="./images/sprite.svg#menu"></use>
+      </svg>
+      <ul class="list nav__list collapsible__content">
+        <li class="nav__list__items"><a href="#"></a>Hosting</li>
+        <li class="nav__list__items"><a href="#"></a>VPS</li>
+        <li class="nav__list__items"><a href="#"></a>Domain</li>
+        <li class="nav__list__items"><a href="#"></a>Pricing</li>
+      </ul>
+    </nav>
+    <script src="js/main.js"></script>
+  </body>
 </html>
