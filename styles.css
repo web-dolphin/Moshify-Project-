@@ -766,3 +766,23 @@ In heading we have two things: 1. Is a heading(h2/h3) and 2. is an icon*/
     align-self: center;
   }
 }
+
+/* Optimizing Image */
+
+/* 
+If the size of an image is large or if we have multiple large size images then its a problem, it make our web site
+heavy, so to optimze the images we need to open Photoshop and make image in multiple sizes:
+
+STRATEGY: 
+=> Assuming if our image not gonna be larger than 570px we can serve the image in 570px-wide.
+=> For small screens let the browsers do small resizing(570 -> 500).
+
+Pixel Density of the Screen:
+Modern screens have higher pixel density like 1, 2, 3 and so on, Apple called these RETINA DISPLAYS.
+So to look our image very sharp on these modern screens we have to porovide 2x or 3x version of this image.
+
+So we will make copies of our image in normal, 2x and 3x versions.
+
+For web images we can use the .webp extension for smaller sizes.
+
+*/
