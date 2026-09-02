@@ -338,7 +338,7 @@ With this we end up with weird layout issues and sometimes trouble shooting issu
 /* Cards  */
 
 .card {
-  /* width: 400px; */
+  /* width: 340px; */
   border-radius: 7px;
   box-shadow: 0 0 20px 10px #f3f3f3;
   overflow: hidden;
@@ -351,6 +351,11 @@ With this we end up with weird layout issues and sometimes trouble shooting issu
 
 .card--primary .card__header {
   background-color: var(--color-primary);
+  color: #fff;
+}
+
+.card--primary .badge--primary {
+  background: #126de4;
   color: #fff;
 }
 
@@ -373,6 +378,11 @@ With this we end up with weird layout issues and sometimes trouble shooting issu
 }
 
 /* Plans  */
+
+.plan {
+  transition: transform 0.2s ease-out;
+}
+
 .plan__name {
   font-size: 2.4rem;
   color: #fff;
@@ -413,6 +423,18 @@ With this we end up with weird layout issues and sometimes trouble shooting issu
   position: absolute;
   top: -6px;
   right: 5%;
+}
+
+.plan--popular {
+  transform: scale(1.1);
+}
+
+.plan:hover {
+  transform: scale(1.05);
+}
+
+.plan--popular:hover {
+  transform: scale(1.15);
 }
 
 @media screen and (min-width: 1024px) {
@@ -818,4 +840,15 @@ For web images we can use the .webp extension for smaller sizes.
   .domain-block__prices {
     grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
   }
+}
+
+/* Plans Block */
+
+.block-plans .grid {
+  gap: 8rem 4rem;
+}
+
+.block-plans .card {
+  max-width: 400px;
+  margin: 0 auto;
 }
