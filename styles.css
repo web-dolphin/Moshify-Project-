@@ -192,7 +192,7 @@ a {
   width: 64px;
   height: 64px;
   border-radius: 100%;
-  background-color: gold;
+  background-color: rgba(255, 215, 0, 0.4);
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -851,4 +851,28 @@ For web images we can use the .webp extension for smaller sizes.
 .block-plans .card {
   max-width: 400px;
   margin: 0 auto;
+}
+
+/* Features */
+
+.feature {
+  gap: 4rem 2rem;
+}
+
+.feature:first-of-type {
+  margin-top: 2rem;
+}
+
+.feature__heading {
+  margin: 1rem 0;
+}
+
+.feature__image {
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .feature:nth-of-type(even) .feature__content {
+    order: 2;
+  }
 }
