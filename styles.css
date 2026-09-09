@@ -681,6 +681,7 @@ In heading we have two things: 1. Is a heading(h2/h3) and 2. is an icon*/
 
 .block__header {
   text-align: center;
+  margin-bottom: 4rem;
 }
 
 .block--dark {
