@@ -1,6 +1,4 @@
-/* Todo Highlighter, CSS Peak, and update VS Code and download another cool IDEs. */
 /* Defining Color Palette */
-
 :root {
   --color-primary: #2584ff;
   --color-secondary: #00d9ff;
@@ -18,6 +16,11 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+::selection {
+  background: var(--color-primary);
+  color: #fff;
 }
 
 /* Typography */
@@ -50,6 +53,7 @@ h2 {
 
 h3 {
   font-size: 3rem;
+  font-weight: 500;
 }
 
 p {
@@ -141,7 +145,6 @@ a {
 /* Lists  */
 
 .list {
-  color: var(--color-heading);
   list-style-type: none;
   padding-left: 0;
 }
@@ -155,6 +158,7 @@ a {
 .list--tick {
   list-style-image: url(../images/tick.svg);
   padding-left: 3rem;
+  color: var(--color-heading);
 }
 
 .list--tick .list__item {
@@ -459,6 +463,7 @@ With this we end up with weird layout issues and sometimes trouble shooting issu
 
 .media {
   display: flex;
+  margin-bottom: 4rem;
 }
 
 .media__image {
@@ -665,7 +670,7 @@ In heading we have two things: 1. Is a heading(h2/h3) and 2. is an icon*/
 /* Sementically a block is represented by a section element */
 
 .block {
-  --padding-vertical: 6rem;
+  --padding-vertical: 5rem;
   padding: var(--padding-vertical) 2rem;
   /* If we declare a variable in a block it will be applied to it and all its childs */
 }
@@ -683,20 +688,23 @@ In heading we have two things: 1. Is a heading(h2/h3) and 2. is an icon*/
   color: #7b858b;
 }
 
-.block--dark .block__heading {
+.block--dark h1,
+.block--dark h2,
+.block--dark h3 {
   color: #fff;
 }
 
 /* We can use CSS clip-path for skey type of images */
 
 .block--skewed-right {
-  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 80%);
-  padding: calc(var(--padding-vertical) + 4rem);
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 95%);
+  padding-bottom: calc(var(--padding-vertical) + 4rem);
+
   /* calc() => To add an extra value to the existing one. */
 }
 .block--skewed-left {
   padding: calc(var(--padding-vertical) + 4rem);
-  clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 0% 100%);
+  clip-path: polygon(0% 0%, 100% 0%, 100% 95%, 0% 100%);
 }
 
 .container {
@@ -770,10 +778,6 @@ In heading we have two things: 1. Is a heading(h2/h3) and 2. is an icon*/
 }
 
 /* Hero */
-
-.hero {
-  clip-path: polygon(0% 0%, 100% 0%, 100% 90%, 0% 100%);
-}
 
 .hero__tagline {
   color: #b9c3cf;
@@ -874,5 +878,26 @@ For web images we can use the .webp extension for smaller sizes.
 @media screen and (min-width: 768px) {
   .feature:nth-of-type(even) .feature__content {
     order: 2;
+  }
+}
+
+/* Showcase */
+
+.block-showcase__image > img {
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .block-showcase .grid {
+    grid-template-columns: 50% 50%;
+  }
+
+  .block-showcase__image {
+    justify-self: end;
+  }
+
+  .block-showcase__image > img {
+    width: auto;
+    max-width: 700px;
   }
 }
