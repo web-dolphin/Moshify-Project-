@@ -1,0 +1,25 @@
+{
+  "name": "00-project-files",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/web-dolphin/Moshify-Project-.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/web-dolphin/Moshify-Project-/issues"
+  },
+  "homepage": "https://github.com/web-dolphin/Moshify-Project-#readme",
+  "dependencies": {
+    "D": "^1.0.0",
+    "parcel-bundler": "^1.12.5"
+  }
+}

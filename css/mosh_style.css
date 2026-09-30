@@ -1,50 +1,49 @@
-/* Defining Color Palette */
+@import "./normalize.css";
 :root {
   --color-primary: #2584ff;
   --color-secondary: #00d9ff;
   --color-accent: #ff3400;
-  --color-heading: #1b0760;
+  --color-headings: #1b0760;
   --color-body: #918ca4;
   --color-body-darker: #5c5577;
-  --color-borders: #ccc;
-  --border-radius: 40px;
+  --color-border: #ccc;
+  --border-radius: 30px;
 }
 
-*,
-*::after,
-*::before {
+*, *::after, *::before {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
 }
+
+/* Typography */
 
 ::selection {
   background: var(--color-primary);
   color: #fff;
 }
 
-/* Typography */
-
 html {
   font-size: 62.5%;
 }
 
-body {
-  font-family: inter, Arial, Helvetica, sans-serif;
-  color: var(--color-body);
-  font-size: 2.4rem;
-  line-height: 1.5;
+img {
+  width: 100%;
 }
 
-h1,
-h2,
-h3 {
-  color: var(--color-heading);
+body {
+  font-family: Inter, Arial, Helvetica, sans-serif;
+  font-size: 2rem;
+  line-height: 1.5;
+  color: var(--color-body);
+}
+
+h1, h2, h3 {
+  color: var(--color-headings);
   margin-bottom: 1rem;
   line-height: 1.1;
 }
+
 h1 {
-  font-size: 7rem;
+  font-size: 6rem;
 }
 
 h2 {
@@ -52,36 +51,31 @@ h2 {
 }
 
 h3 {
-  font-size: 3rem;
-  font-weight: 500;
+  font-size: 2.8rem;
+  font-weight: 600;
+  line-height: 1.3;
 }
 
 p {
   margin-top: 0;
-  font-size: 2.2rem;
 }
 
 @media screen and (min-width: 1024px) {
-  /* Typography */
-
   body {
     font-size: 1.8rem;
   }
-
   h1 {
     font-size: 8rem;
   }
-
   h2 {
     font-size: 4rem;
   }
-
   h3 {
     font-size: 2.4rem;
   }
 }
 
-/* Links  */
+/* Links */
 
 a {
   text-decoration: none;
@@ -89,15 +83,17 @@ a {
 
 .link-arrow {
   color: var(--color-accent);
+  text-transform: uppercase;
   font-size: 2rem;
   font-weight: bold;
-  text-transform: uppercase;
 }
+
 .link-arrow::after {
   content: "-->";
   margin-left: 5px;
   transition: margin 0.15s;
 }
+
 .link-arrow:hover::after {
   margin-left: 10px;
 }
@@ -108,22 +104,23 @@ a {
   }
 }
 
-/* Badges  */
+/* Badges */
+
 .badge {
-  border-radius: var(--border-radius);
+  border-radius: 20px;
   font-size: 2rem;
   font-weight: 600;
-  padding: 0.5em 2rem;
+  padding: 0.5rem 2rem;
   white-space: nowrap;
-  /* nowrap => Prevents a badge from wraping to second line. */
 }
+
 .badge--primary {
-  background-color: var(--color-primary);
+  background: var(--color-primary);
   color: #fff;
 }
 
 .badge--secondary {
-  background-color: var(--color-secondary);
+  background: var(--color-secondary);
   color: #fff;
 }
 
@@ -136,29 +133,27 @@ a {
   .badge {
     font-size: 1.5rem;
   }
-
   .badge--small {
     font-size: 1.2rem;
   }
 }
 
-/* Lists  */
+/* Lists */
 
 .list {
-  list-style-type: none;
+  list-style: none;
   padding-left: 0;
 }
 
 .list--inline .list__item {
   display: inline-block;
   margin-right: 2rem;
-  font-weight: bold;
 }
 
 .list--tick {
-  list-style-image: url(images/tick.svg);
+  list-style-image: url(../images/tick.svg);
   padding-left: 3rem;
-  color: var(--color-heading);
+  color: var(--color-headings);
 }
 
 .list--tick .list__item {
@@ -172,7 +167,7 @@ a {
   }
 }
 
-/* collapsibles */
+/* Icons */
 
 .icon {
   width: 40px;
@@ -193,10 +188,10 @@ a {
 }
 
 .icon-container {
+  background: #f3f9fa;
   width: 64px;
   height: 64px;
   border-radius: 100%;
-  background-color: rgba(255, 215, 0, 0.4);
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -209,67 +204,65 @@ a {
 /* Buttons */
 
 .btn {
-  border-radius: var(--border-radius);
+  border-radius: 40px;
   border: 0;
+  cursor: pointer;
   font-size: 1.8rem;
   font-weight: 600;
   margin: 1rem 0;
-  padding: 2rem 3vw;
-  text-transform: uppercase;
-  cursor: pointer;
-  white-space: nowrap;
-  box-sizing: border-box;
+  outline: 0;
+  padding: 2rem 4vw;
   text-align: center;
+  text-transform: uppercase;
+  white-space: nowrap;
 }
 
 .btn .icon {
   width: 2rem;
   height: 2rem;
-  margin-left: 1rem;
+  margin-right: 1rem;
   vertical-align: middle;
 }
 
 .btn--primary {
-  background-color: var(--color-primary);
+  background: var(--color-primary);
   color: #fff;
 }
 
 .btn--primary:hover {
-  /* background-color: lighten(primary, 10%); */
-  /* The above line is a sass code  */
-  background-color: #3a8ffd;
+  background: #3a8ffd;
 }
 
 .btn--secondary {
-  background-color: var(--color-secondary);
+  background: var(--color-secondary);
   color: #fff;
 }
 
 .btn--secondary:hover {
-  background-color: #00c8eb;
+  background: #05cdf0;
 }
 
 .btn--accent {
-  background-color: var(--color-accent);
+  background: var(--color-accent);
   color: #fff;
 }
 
 .btn--accent:hover {
-  background-color: #fd4516;
+  background: #ec3000;
 }
 
 .btn--outline {
-  background-color: #fff;
-  color: var(--color-heading);
-  border: 2px solid var(--color-heading);
+  background: #fff;
+  color: var(--color-headings);
+  border: 2px solid var(--color-headings);
 }
 
 .btn--outline:hover {
-  background-color: var(--color-heading);
+  background: var(--color-headings);
   color: #fff;
 }
 
-.btn--streched {
+.btn--stretched {
   padding-left: 6rem;
   padding-right: 6rem;
 }
@@ -285,28 +278,23 @@ a {
   }
 }
 
-/* input field  */
+/* Inputs */
 
 .input {
-  font-size: 2rem;
-  padding: 1rem 3.5rem;
-  border: 1px solid var(--color-borders);
-  outline: 0;
   border-radius: var(--border-radius);
-  color: var(--color-heading);
-  /* box-shadow: 2px 2px 20px ; */
+  border: 1px solid var(--color-border);
+  color: var(--color-headings);
+  font-size: 2rem;
+  outline: 0;
+  padding: 1.5rem 3.5rem;
 }
 
 ::placeholder {
-  color: #cbcbd7;
-  font-size: 2rem;
+  color: #cdcbd7;
 }
 
-/* The button is not inside the input field, but inside a div with a border  */
-
 .input-group {
-  display: flex;
-  border: 1px solid var(--color-body);
+  border: 1px solid var(--color-border);
   border-radius: var(--border-radius);
   display: flex;
 }
@@ -322,95 +310,71 @@ a {
   margin: 4px;
 }
 
-@media screen and (min-widtd: 1024px) {
+@media screen and (min-width: 1024px) {
   .input {
     font-size: 1.5rem;
   }
 }
 
-/* Two Approched toward design:
-
-1. BOTTOM UP: (recomended)
-Components first
-
-2. BOTTM DOWN:
-Page first
-We start at the page level and start building different elements.
-
-With this we end up with weird layout issues and sometimes trouble shooting issues
-*/
-
-/* Cards  */
+/* Cards */
 
 .card {
-  /* width: 340px; */
   border-radius: 7px;
   box-shadow: 0 0 20px 10px #f3f3f3;
   overflow: hidden;
 }
 
-.card__header,
-.card__body {
-  padding: 2rem 3rem;
+.card__header, .card__body {
+  padding: 2rem 7%;
 }
 
 .card--primary .card__header {
-  background-color: var(--color-primary);
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.card--secondary .card__header {
+  background: var(--color-secondary);
   color: #fff;
 }
 
 .card--primary .badge--primary {
   background: #126de4;
-  color: #fff;
-}
-
-.card--secondary .card__header {
-  background-color: var(--color-secondary);
-  color: #fff;
 }
 
 .card--secondary .badge--secondary {
   background: #02cdf1;
 }
 
-.card--crimson .card__header {
-  background-color: crimson;
-  color: #fff;
-}
-
-.card--crimson .badge--secondary {
-  background-color: rgb(195, 18, 54);
-}
-
-/* Plans  */
+/* Plans */
 
 .plan {
   transition: transform 0.2s ease-out;
 }
 
 .plan__name {
-  font-size: 2.4rem;
   color: #fff;
   margin: 0;
   font-weight: 500;
+  font-size: 2.4rem;
 }
 
 .plan__price {
-  font-size: 6rem;
+  font-size: 5rem;
 }
 
 .plan__billing-cycle {
-  font-size: 2.4rem;
-  opacity: 0.8;
+  font-size: 2rem;
   font-weight: 300;
+  opacity: 0.8;
   margin-right: 1rem;
 }
 
 .plan__description {
   font-size: 2rem;
-  display: block;
   font-weight: 300;
   letter-spacing: 1px;
+  display: block;
 }
 
 .plan .list__item {
@@ -422,16 +386,12 @@ With this we end up with weird layout issues and sometimes trouble shooting issu
 }
 
 .plan--popular .card__header::before {
-  content: url(images/popular.svg);
+  content: url(../images/popular.svg);
   width: 40px;
   display: inline-block;
   position: absolute;
   top: -6px;
   right: 5%;
-}
-
-.plan--popular {
-  transform: scale(1.1);
 }
 
 .plan:hover {
@@ -443,18 +403,18 @@ With this we end up with weird layout issues and sometimes trouble shooting issu
 }
 
 @media screen and (min-width: 1024px) {
+  .plan--popular {
+    transform: scale(1.1);
+  }
   .plan__name {
     font-size: 1.4rem;
   }
-
   .plan__price {
     font-size: 5rem;
   }
-
   .plan__billing-cycle {
     font-size: 1.6rem;
   }
-
   .plan__description {
     font-size: 1.7rem;
   }
@@ -467,20 +427,16 @@ With this we end up with weird layout issues and sometimes trouble shooting issu
   margin-bottom: 4rem;
 }
 
-.media__image {
-  margin-top: 1rem;
-}
-
-.snap--icon {
-  fill: red;
-}
-
 .media__title {
   margin-top: 0;
 }
 
 .media__body {
   margin: 0 2rem;
+}
+
+.media__image {
+  margin-top: 1rem;
 }
 
 /* Quotes */
@@ -495,41 +451,43 @@ With this we end up with weird layout issues and sometimes trouble shooting issu
 .quote__text::before {
   content: open-quote;
 }
+
 .quote__text::after {
   content: close-quote;
 }
 
-.quote .media__image {
-  margin-top: 0;
-}
-
 .quote__author {
+  font-size: 2rem;
+  font-weight: 500;
   font-style: normal;
   margin-bottom: 0;
 }
 
-.author__company {
-  font-style: normal;
-  color: var(--color-heading);
+.quote__organization {
+  color: var(--color-headings);
   opacity: 0.4;
-  font-size: 2rem;
+  font-size: 1.5rem;
+  font-style: normal;
+}
+
+.quote__line {
+  position: relative;
+  bottom: 10px;
 }
 
 @media screen and (min-width: 1024px) {
   .quote {
     font-size: 2rem;
   }
-
   .quote__author {
     font-size: 2.4rem;
   }
-
-  .author__company {
+  .quote__organization {
     font-size: 1.6rem;
   }
 }
 
-/* Grids  */
+/* Grids */
 
 .grid {
   display: grid;
@@ -547,44 +505,44 @@ With this we end up with weird layout issues and sometimes trouble shooting issu
   }
 }
 
-/* Testimonials  */
+/* Testimonials */
 
 .testimonial {
   padding: 3rem;
 }
 
-.testimonial__image > img {
-  width: 100%;
+.testimonial .quote {
+  margin: 2rem 0;
+  font-size: 110%;
 }
-
-/* To apply absolute postion on a container we need to set relative on its parent container  */
 
 .testimonial__image {
   position: relative;
+  margin: 0 3rem;
 }
 
-.testimonial__image > .icon-container {
+.testimonial__image>.icon-container {
   position: absolute;
   top: 3rem;
   right: -32px;
-  /* The width and height of the icon is 64px so if divided by two it is 32, by setting it we will be in the center  */
 }
 
 @media screen and (min-width: 768px) {
-  .testimonial .quote,
-  .testimonial .quote__author {
-    font-size: 2.4rem;
+  .testimonial__image {
+    margin: 0;
   }
   .testimonial .quote {
-    margin-left: 6rem;
+    margin: 5rem 0 0 6rem;
+    font-size: 120%;
+    line-height: 1.5;
   }
 }
 
-/* Callouts  */
+/* Callouts */
 
 .callout {
-  border-radius: 5px;
   padding: 4rem;
+  border-radius: 5px;
 }
 
 .callout--primary {
@@ -598,36 +556,29 @@ With this we end up with weird layout issues and sometimes trouble shooting issu
   font-size: 3rem;
 }
 
-.callout__content {
-  text-align: center;
-}
-
 .callout .btn {
   justify-self: center;
   align-self: center;
+}
+
+.callout__content {
+  text-align: center;
 }
 
 @media screen and (min-width: 768px) {
   .callout .grid--1x2 {
     grid-template-columns: 1fr auto;
   }
-
   .callout__content {
     text-align: left;
   }
-
   .callout .btn {
-    justify-self: left;
+    justify-self: start;
     margin: 0 2rem;
   }
 }
 
-/* Collapsibles  */
-
-/*
-Every collapsible component should have to sections, 1. Header and 2. is body/content area. So when we click on
-on the header the body/content collapses.
-In heading we have two things: 1. Is a heading(h2/h3) and 2. is an icon*/
+/* Collapsibles */
 
 .collapsible__header {
   display: flex;
@@ -643,8 +594,6 @@ In heading we have two things: 1. Is a heading(h2/h3) and 2. is an icon*/
   transform: rotate(-90deg);
   transition: transform 0.3s;
 }
-
-/* Collapsibles are in two states either collapse or expand. */
 
 .collapsible__content {
   max-height: 0;
@@ -664,16 +613,9 @@ In heading we have two things: 1. Is a heading(h2/h3) and 2. is an icon*/
 
 /* Blocks */
 
-/* Sementically a block is represented by a section element */
-
 .block {
   --padding-vertical: 5rem;
   padding: var(--padding-vertical) 2rem;
-  /* If we declare a variable in a block it will be applied to it and all its childs */
-}
-
-.block__heading {
-  margin-top: 0;
 }
 
 .block__header {
@@ -681,27 +623,26 @@ In heading we have two things: 1. Is a heading(h2/h3) and 2. is an icon*/
   margin-bottom: 4rem;
 }
 
+.block__heading {
+  margin-top: 0;
+}
+
 .block--dark {
   background: #000;
   color: #7b858b;
 }
 
-.block--dark h1,
-.block--dark h2,
-.block--dark h3 {
+.block--dark h1, .block--dark h2, .block--dark h3 {
   color: #fff;
 }
 
-/* We can use CSS clip-path for skey type of images */
-
 .block--skewed-right {
-  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 95%);
   padding-bottom: calc(var(--padding-vertical) + 4rem);
-
-  /* calc() => To add an extra value to the existing one. */
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 95%);
 }
+
 .block--skewed-left {
-  padding: calc(var(--padding-vertical) + 4rem);
+  padding-bottom: calc(var(--padding-vertical) + 4rem);
   clip-path: polygon(0% 0%, 100% 0%, 100% 95%, 0% 100%);
 }
 
@@ -709,13 +650,11 @@ In heading we have two things: 1. Is a heading(h2/h3) and 2. is an icon*/
   max-width: 1140px;
   margin: 0 auto;
 }
-/* Its a reusable container, can be used anywhere for setting width.*/
-/* Here in blocks, we cannot apply this on dark block! */
 
 /* Navigation Bar */
 
 .nav {
-  background-color: #000;
+  background: #000;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -729,7 +668,6 @@ In heading we have two things: 1. Is a heading(h2/h3) and 2. is an icon*/
 }
 
 .nav__item {
-  font-size: 2rem;
   padding: 0.5rem 2rem;
   border-bottom: 1px solid #222;
 }
@@ -738,19 +676,13 @@ In heading we have two things: 1. Is a heading(h2/h3) and 2. is an icon*/
   border-bottom: none;
 }
 
-.nav__item > a {
+.nav__item>a {
   color: #d2d0db;
   transition: color 0.3s;
 }
 
-.nav__item > a:hover {
+.nav__item>a:hover {
   color: #fff;
-  cursor: pointer;
-}
-
-.nav a img {
-  width: 150px;
-  transform: translateY(5px);
 }
 
 .nav__toggler {
@@ -765,10 +697,9 @@ In heading we have two things: 1. Is a heading(h2/h3) and 2. is an icon*/
   border-radius: 5px;
 }
 
-.collapsible--expanded {
-  opacity: 1;
-  box-shadow: 0 0 0 3px #666;
-  border-radius: 5px;
+.nav__brand {
+  transform: translateY(5px);
+  width: 150px;
 }
 
 @media screen and (min-width: 768px) {
@@ -782,7 +713,6 @@ In heading we have two things: 1. Is a heading(h2/h3) and 2. is an icon*/
     max-height: 100%;
     opacity: 1;
   }
-
   .nav__item {
     border: 0;
   }
@@ -791,45 +721,24 @@ In heading we have two things: 1. Is a heading(h2/h3) and 2. is an icon*/
 /* Hero */
 
 .hero__tagline {
-  color: #b9c3cf;
   font-size: 2rem;
+  color: #b9c3cf;
   letter-spacing: 1px;
   margin: 2rem 0 5rem;
 }
 
-.hero__image {
-  width: 100%;
-}
-
 @media screen and (min-width: 768px) {
-  .hero {
-    padding-top: 0;
-  }
   .hero__content {
     text-align: left;
     align-self: center;
   }
 }
 
-/* Optimizing Image */
-
-/* 
-If the size of an image is large or if we have multiple large size images then its a problem, it make our web site
-heavy, so to optimze the images we need to open Photoshop and make image in multiple sizes:
-
-STRATEGY: 
-=> Assuming if our image not gonna be larger than 570px we can serve the image in 570px-wide.
-=> For small screens let the browsers do small resizing(570 -> 500).
-
-Pixel Density of the Screen:
-Modern screens have higher pixel density like 1, 2, 3 and so on, Apple called these RETINA DISPLAYS.
-So to look our image very sharp on these modern screens we have to porovide 2x or 3x version of this image.
-
-So we will make copies of our image in normal, 2x and 3x versions.
-
-For web images we can use the .webp extension for smaller sizes.
-
-*/
+@media screen and (min-width: 1024px) {
+  .hero {
+    padding-top: 0;
+  }
+}
 
 /* Domain Block */
 
@@ -840,20 +749,20 @@ For web images we can use the .webp extension for smaller sizes.
   max-width: 670px;
 }
 
-.domain-block__prices {
-  max-width: 700px;
-  margin: 0 auto;
+.block-domain__prices {
+  color: var(--color-headings);
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 6rem);
   font-size: 2rem;
   font-weight: 600;
   justify-items: center;
-  color: var(--color-heading);
+  max-width: 700px;
+  margin: 0 auto;
 }
 
 @media screen and (min-width: 768px) {
-  .domain-block__prices {
+  .block-domain__prices {
     grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
   }
 }
@@ -865,7 +774,7 @@ For web images we can use the .webp extension for smaller sizes.
 }
 
 .block-plans .card {
-  max-width: 400px;
+  max-width: 500px;
   margin: 0 auto;
 }
 
@@ -873,18 +782,15 @@ For web images we can use the .webp extension for smaller sizes.
 
 .feature {
   gap: 4rem 2rem;
+  margin: 12rem 0;
 }
 
 .feature:first-of-type {
-  margin-top: 2rem;
+  margin-top: 6rem;
 }
 
 .feature__heading {
   margin: 1rem 0;
-}
-
-.feature__image {
-  width: 100%;
 }
 
 @media screen and (min-width: 768px) {
@@ -893,22 +799,16 @@ For web images we can use the .webp extension for smaller sizes.
   }
 }
 
-/* Showcase */
-
-.block-showcase__image > img {
-  width: 100%;
-}
+/* Showcase Block */
 
 @media screen and (min-width: 768px) {
   .block-showcase .grid {
     grid-template-columns: 50% 50%;
   }
-
   .block-showcase__image {
     justify-self: end;
   }
-
-  .block-showcase__image > img {
+  .block-showcase__image>img {
     width: auto;
     max-width: 700px;
   }
@@ -918,6 +818,7 @@ For web images we can use the .webp extension for smaller sizes.
 
 .footer {
   background: #232323;
+  padding-top: 10rem;
 }
 
 .footer a {
@@ -930,23 +831,27 @@ For web images we can use the .webp extension for smaller sizes.
 }
 
 .footer__section {
-  padding: 3rem 0;
+  padding: 2rem;
   border-bottom: 1px solid #393939;
+}
+
+.footer__section .list {
+  margin: 0;
 }
 
 .footer__heading {
   text-transform: uppercase;
   font-weight: 600;
+  font-size: 2.5rem;
+  line-height: 1.5;
 }
 
 .footer__brand {
-  text-align: center;
   margin-top: 5rem;
+  text-align: center;
 }
 
 .footer__brand img {
-  /* TODO: Consider refraction this and applying it to all images   */
-  width: 100%;
   max-width: 230px;
 }
 
@@ -957,87 +862,36 @@ For web images we can use the .webp extension for smaller sizes.
 }
 
 @media screen and (min-width: 768px) {
+  .footer {
+    font-size: 1.5rem;
+  }
   .footer__sections {
     grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
   }
-
   .footer .collapsible__chevron {
-    display: hidden;
+    display: none;
   }
-
   .footer .collapsible__content {
     opacity: 1;
     max-height: 100%;
   }
-
   .footer__brand {
     order: -1;
-    margin-top: 2rem;
+    margin-top: 1rem;
   }
-
   .footer__copyright {
     font-size: 1.5rem;
   }
-
   .footer__section {
-    border-bottom: 0;
+    border: 0;
   }
-
   .footer__heading {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
   }
 }
 
-/*
-SEO:
-1. Give a proper name to the page
-2. Add necessary meta tags
-Purpose of meta tage:
-Meta tags gives search engine information about our page.
-Every meta tage has two attributes: "name" and "content"
- */
+/* Sign-up Callout */
 
-/* ++++++++++++++++++++++++++++++++++++++++++++++++++++ */
-
-/* HTML and CSS VALIDATION: */
-
-/* ++++++++++++++++++++++++++++++++++++++++++++++++++++ */
-
-/*
-BUILDING FOR PRODUCTION:
-Using a build tool we can:
-1. Combine CSS and JS files to reduce http requests sent to the server.
-2. Minify JS/CSS files so we can remove the unnecessary comments and extra spaces, So we can deliver a smaller files.
-3. Optimize images
-
-BUILDS TOOLS:
-Webpack => "Commonly used but difficult for beginners".
-Rollup  => "I used it years ago".
-Parcel => "Currently using it and absolutly loved it".
-*/
-
-/* 
-Node comes with a tool called npm (node package manager).
-With this tool we can install third party libraries also called third party dependencies.
-
-Befor we can use npm first we need to initilize a npm package in this directory:
-$ npm init -y => Creates a .json file which hold the project's information.
--y => if you don't supply the -y option the npm is goona ask few question about the project.
-
-Soon we will install parcel as third party dependency. Once we do that we will see parcel and it 
-version list in this file as well.
-To do that we write:
-$ npm i -D parcel-bundler
-i => stand for intall, A capital D and then name of the package/library. D stands for development dependencies
-*/
-
-/* The node_modules holds the "parcel-bundler" file but there are other hunderds of files which are 
-dependent on on another, we don't need them all. So we are gonna put the node_modules file in the .gitignore */
-
-/* To open files in live server using parcel just write 
-$ parcel index.html
-0r if you want to use a different server write:
-$ parcel index.html --port 8080/1234/etc*/
-
-/* For building write:
-$ parcel build index.html */
+.callout-signup {
+  transform: translateY(5rem);
+}
